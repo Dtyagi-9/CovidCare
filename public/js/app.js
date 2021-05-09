@@ -1,18 +1,5 @@
 console.log("Client side javascript file is loaded!");
 var url = "http://localhost:3004/weather?add=";
-// fetch('http://localhost:3004/weather?add=ghaziabad').then((res)=>{
-//     res.json().then((data)=>{
-//         // console.log(data)
-//         if(data.error){
-//             console.log(data.error)
-//         }
-//         else{
-//             console.log(data.Location)
-//             console.log(data.forecast.summary)
-
-//         }
-//     })
-// })
 
 const form = document.querySelector("form");
 // const search = document.querySelector('input')
@@ -27,16 +14,14 @@ const message_forecast = document.querySelector("#forecast");
 form.addEventListener("submit", e => {
   message_location.textContent = "Loading...";
   message_forecast.textContent = "";
-  url = "http://localhost:3005/vaccine?pin=";
+  url = "https://covidcare-iiitu.herokuapp.com/vaccine?pin=";
   e.preventDefault();
   const age = age_cont.value;
   const pin = pin_cont.value;
-  //console.log(pin);
   url = url + pin + "&age=" + age;
 
   fetch(url).then(res => {
     res.json().then(data => {
-      //console.log(data);
       const output = JSON.stringify(data);
       if (data.error) {
         console.log(data.error);
