@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>CovidCare</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <p>Defeat Covid by getting vaccinated</p>
+
+
+        {{#if data}}
+        <table cellspacing="1" style="width:100%">
+
+            <tr>
+                <th>District</th>
+                <th>Center</th>
+                <th>Date</th>
+                <th>Slots</th>
+            </tr>
+
+            {{#each data}}
+
+            <tr id="{{id}}">
+                <td>
+                    <p></p>>
+                </td>
+                <td>
+                    <p></p>>
+                </td>
+                <td>
+                    <p></p>>
+                </td>
+                <td>
+                    <p></p>>
+                </td>
+            </tr>
+
+
+            {{/each}}
+            {{/if}}
+        </table>
+
+        <p>Please Visit the Cowin App or the Arogya Setu App to register for the above mentioned slots </p>>
+        {{else}}
+        <p>No results Could be found for your query please visit home and try searching at a nearby place. </p>>
+        {{/else}}
+
+    </div>
+
+    {{>footer}}
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>
